@@ -1,0 +1,181 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: hsl(235, 16%, 14%);
+    background-image: url(images/bg-stars.svg);
+}
+
+header {
+    color: hsl(235, 16%, 14%);
+    margin-bottom: 70px;
+    margin-top: 100px;
+    text-align: center;
+}
+
+header p {
+    color: white;
+    font-size: 18px;
+    font-weight: 550;
+    letter-spacing: 4px;
+    opacity: 0.9;
+    text-transform: uppercase;
+}
+
+main {
+    text-align: center;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 520px;
+}
+
+.days-digits,
+.hrs-digits,
+.mins-digits,
+.secs-digits {
+    background: linear-gradient(hsl(236, 21%, 26%) 50%, hsl(236, 21%, 26%) 50%);
+    border-radius: 8px;
+    box-shadow: 0px 6px 3px 0px black;
+    color: hsl(345, 95%, 68%);
+    font-size: 75px;
+    font-weight: 550;
+    margin: 18px 0;
+    overflow: hidden;
+    padding: 10px 14px;
+    transform-style: preserve-3d;
+}
+
+.secs-digits.active {
+    transform: translateY(360deg);
+}
+
+.days-digits::after,
+.hrs-digits::after,
+.mins-digits::after,
+.secs-digits::after {
+    background-color: hsl(235, 16%, 14%);
+    border-radius: 50%;
+    content: "";
+    height: 10%;
+    left: -6px;
+    position: absolute;
+    top: 50px;
+    width: 11%;
+}
+
+.days-digits::before,
+.hrs-digits::before,
+.mins-digits::before,
+.secs-digits::before {
+    background-color: hsl(235, 16%, 14%);
+    border-radius: 50%;
+    content: "";
+    height: 10%;
+    right: -6px;
+    position: absolute;
+    top: 50px;
+    width: 11%;
+}
+
+.days :nth-child(2),
+.hours :nth-child(2),
+.minutes :nth-child(2),
+.seconds :nth-child(2) {
+    color: hsl(237, 18%, 59%);
+    font-size: 12px;
+    font-weight: 550;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+}
+
+footer {
+    transform: translateY(136px);
+    position: relative;
+}
+
+.pattern {
+    /* bottom: 0px; */
+    height: 25vh;
+    width: 100%;
+}
+
+.icons {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    left: 600px;
+    margin: 0 auto;
+    position: absolute;
+    top: 83px;
+    width: 125px;
+}
+
+
+/* PSUEDO ELEMENT */
+
+.icons img:hover {
+    filter: invert(58%) sepia(17%) saturate(6682%) hue-rotate(309deg) brightness(99%) contrast(98%);
+}
+
+
+/* RESPONSIVE STYLES */
+
+@media screen and (max-width: 375px) {
+
+    header p {
+        margin: 0 auto;
+        width: 300px;
+    }
+
+    .container {
+        width: 330px;
+    }
+
+    .days-digits,
+    .hrs-digits,
+    .mins-digits,
+    .secs-digits {
+        font-size: 40px;
+        width: 70px;
+    }
+
+    .days :nth-child(2),
+    .hours :nth-child(2),
+    .minutes :nth-child(2),
+    .seconds :nth-child(2) {
+        font-size: 9px;
+    }
+
+    .days-digits::after,
+    .hrs-digits::after,
+    .mins-digits::after,
+    .secs-digits::after {
+        left: -4.5px;
+        top: 30px;
+    }
+
+    .days-digits::before,
+    .hrs-digits::before,
+    .mins-digits::before,
+    .secs-digits::before {
+        right: -4.5px;
+        top: 30px;
+    }
+
+    footer {
+        transform: translateY(157px);
+    }
+
+    .icons {
+        left: 120px;
+        top: 88px;
+    }
+}
